@@ -43,15 +43,29 @@ document.addEventListener('DOMContentLoaded', function () {
   carouselSlide.addEventListener('mouseenter', function () {
     clearInterval(intervalId);
   });
-
   // Quando o mouse entra no carrossel, para o intervalo, impedindo a troca automática
 
   // Continue o intervalo quando o mouse sair do carrossel
   carouselSlide.addEventListener('mouseleave', function () {
     intervalId = setInterval(autoAdvanceSlide, 5000);
   });
-
   // Quando o mouse sai do carrossel, reinicia o intervalo para continuar a troca automática
+
+  prevBtn.addEventListener('mouseenter', function () {
+    clearInterval(intervalId);
+  });
+
+  prevBtn.addEventListener('mouseleave', function () {
+    intervalId = setInterval(autoAdvanceSlide, 5000);
+  });
+
+  nextBtn.addEventListener('mouseenter', function () {
+    clearInterval(intervalId);
+  });
+
+  nextBtn.addEventListener('mouseleave', function () {
+    intervalId = setInterval(autoAdvanceSlide, 5000);
+  });
 });
 
 // script sem comentário:
